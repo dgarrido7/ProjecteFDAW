@@ -111,6 +111,7 @@ abbr[data-original-title] {
           text-decoration-skip-ink: none;
 }
 
+
 address {
   margin-bottom: 1rem;
   font-style: normal;
@@ -10881,4 +10882,5 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
 

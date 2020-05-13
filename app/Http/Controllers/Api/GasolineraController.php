@@ -26,8 +26,12 @@ class GasolineraController extends Controller
                 'geometry'   => [
                     'type'        => 'Point',
                     'coordinates' => [
-                        $gasolinera->longitude,
-                        $gasolinera->latitude,
+                        $gasolinera->Longitud,
+                        $gasolinera->Latitud,
+                    ],
+                    'Ubication' => [
+                        $gasolinera->Longitud,
+                        $gasolinera->Latitud,
                     ],
                 ],
             ];

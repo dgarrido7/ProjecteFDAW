@@ -1,0 +1,1 @@
+var cluster2 = new L.MarkerClusterGroup();

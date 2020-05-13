@@ -13,7 +13,9 @@ class Gasolinera extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'address', 'latitude', 'longitude',
+        'CP', 'Direccion', 'Horario', 'Latitud','Localidad','Longitud','Margen','Municipio','PrecioBiodiesel','PrecioBioetanol','PrecioGasNaturalComprimido','PrecioGasNaturalLiquado','PrecioGasesNaturalesLiquadosPetroleo','PrecioGasoleoA','PrecioGasoleoB','PrecioGasolina95','PrecioGasolina98','PrecioNuevoGasoleoA','Provincia','Remision','Rotulo','TipoVenta','Bioetanol','EsterMetilico','IDEESS','IDMunicipio','IDProvincia','IDCCAA',
+
+
     ];
 
     /**
@@ -68,8 +70,8 @@ class Gasolinera extends Model
      */
     public function getCoordinateAttribute()
     {
-        if ($this->latitude && $this->longitude) {
-            return $this->latitude.', '.$this->longitude;
+        if ($this->Latitud && $this->Longitud) {
+            return $this->Latitud.', '.$this->Longitud;
         }
     }
 
