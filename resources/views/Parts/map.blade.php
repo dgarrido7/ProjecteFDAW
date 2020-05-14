@@ -17,15 +17,20 @@
 
 <div class="row">
 				<div class="col-md-8">
-					<h2>
-						Heading
-					</h2>
-					<p>
-						Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					</p>
-					<p>
-						<a class="btn" href="#">View details »</a>
-					</p>
+                    <form>
+                        <div class="cc-selector">
+                            <input id="PrecioGasolina95" type="radio" name="Fuel-card" value="PrecioGasolina95" />
+                            <label class="drinkcard-cc PrecioGasolina95"for="PrecioGasolina95"></label>
+                            <input id="PrecioGasolina98" type="radio" name="Fuel-card" value="PrecioGasolina98" />
+                            <label class="drinkcard-cc PrecioGasolina98" for="PrecioGasolina98"></label>
+                            <input id="PrecioGasoleoA" type="radio" name="Fuel-card" value="PrecioGasoleoA" />
+                            <label class="drinkcard-cc PrecioGasoleoA"for="PrecioGasoleoA"></label>
+                            <input id="PrecioGasoleoB" type="radio" name="Fuel-card" value="PrecioGasoleoB" />
+                            <label class="drinkcard-cc PrecioGasoleoB"for="PrecioGasoleoB"></label>
+                            <input id="PrecioBiodiesel" type="radio" name="Fuel-card" value="PrecioBiodiesel" />
+                            <label class="drinkcard-cc PrecioBiodiesel"for="PrecioBiodiesel"></label>
+                        </div>
+                    </form>
 				</div>
 				<div class="col-md-4">
 					<h2>
