@@ -9,6 +9,7 @@
 .PrecioGasolina98{background-image:url(../css/imagenes/Gasolina98.png);}
 .PrecioGasolina95{background-image:url(../css/imagenes/Gasolina95.png);}
 .PrecioBiodiesel{background-image:url(../css/imagenes/BioDiesel.png);}
+.PrecioBioetanol{background-image:url(../css/imagenes/BioEtanol.png);}
 
 .cc-selector input:active +.drinkcard-cc{opacity: .9;}
 .cc-selector input:checked +.drinkcard-cc{

@@ -4,69 +4,86 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="jumbotron">
-                <div class="card">
-                    <div class="card-body" id="mapid"></div>
-                </div>
+			<div class="jumbotron p-0">
+                <form>
+                    <div class="row align-items-center justify-content-center">
+                    <div class="col-md-2 pt-3">
+                           <div class="form-group ">
+                              <select id="inputState " class="form-control">
+                                <option selected>Brand</option>
+                                <option>BMW</option>
+                                <option>Audi</option>
+                                <option>Maruti</option>
+                                <option>Tesla</option>
+                              </select>
+                           </div>
+                        </div>
+                		<div class="col-md-2 pt-3">
+                           <div class="form-group">
+                              <select id="inputState" class="form-control">
+                                <option selected>Model</option>
+                                <option>BMW</option>
+                                <option>Audi</option>
+                                <option>Maruti</option>
+                                <option>Tesla</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="col-md-2 pt-3">
+                            <div class="form-group">
+                              <select id="inputState" class="form-control">
+                                <option selected>Budget</option>
+                                <option>BMW</option>
+                                <option>Audi</option>
+                                <option>Maruti</option>
+                                <option>Tesla</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 pt-3">
+                            <div class="form-group">
+                              <select id="inputState" class="form-control">
+                                <option selected>Type</option>
+                                <option>BMW</option>
+                                <option>Audi</option>
+                                <option>Maruti</option>
+                                <option>Tesla</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+            	           <button type="button" class="btn btn-primary btn-block">Search</button>
+            	        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" id="mapid"></div>
+                    </div>
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-12">
+                            <div class="cc-selector">
+                                <input id="PrecioGasolina95" type="radio" name="Fuel-card" value="PrecioGasolina95" />
+                                <label class="drinkcard-cc PrecioGasolina95"for="PrecioGasolina95"></label>
+                                <input id="PrecioGasolina98" type="radio" name="Fuel-card" value="PrecioGasolina98" />
+                                <label class="drinkcard-cc PrecioGasolina98" for="PrecioGasolina98"></label>
+                                <input id="PrecioGasoleoA" type="radio" name="Fuel-card" value="PrecioGasoleoA" />
+                                <label class="drinkcard-cc PrecioGasoleoA"for="PrecioGasoleoA"></label>
+                                <input id="PrecioGasoleoB" type="radio" name="Fuel-card" value="PrecioGasoleoB" />
+                                <label class="drinkcard-cc PrecioGasoleoB"for="PrecioGasoleoB"></label>
+                                <input id="PrecioBiodiesel" type="radio" name="Fuel-card" value="PrecioBiodiesel" />
+                                <label class="drinkcard-cc PrecioBiodiesel"for="PrecioBiodiesel"></label>
+                                <input id="PrecioBioetanol" type="radio" name="Fuel-card" value="PrecioBioetanol" />
+                                <label class="drinkcard-cc PrecioBioetanol"for="PrecioBioetanol"></label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 			</div>
 		</div>
 	</div>
 </div>
 
 <div class="container">
-
-<div class="row">
-				<div class="col-md-8">
-                    <form>
-                        <div class="cc-selector">
-                            <input id="PrecioGasolina95" type="radio" name="Fuel-card" value="PrecioGasolina95" />
-                            <label class="drinkcard-cc PrecioGasolina95"for="PrecioGasolina95"></label>
-                            <input id="PrecioGasolina98" type="radio" name="Fuel-card" value="PrecioGasolina98" />
-                            <label class="drinkcard-cc PrecioGasolina98" for="PrecioGasolina98"></label>
-                            <input id="PrecioGasoleoA" type="radio" name="Fuel-card" value="PrecioGasoleoA" />
-                            <label class="drinkcard-cc PrecioGasoleoA"for="PrecioGasoleoA"></label>
-                            <input id="PrecioGasoleoB" type="radio" name="Fuel-card" value="PrecioGasoleoB" />
-                            <label class="drinkcard-cc PrecioGasoleoB"for="PrecioGasoleoB"></label>
-                            <input id="PrecioBiodiesel" type="radio" name="Fuel-card" value="PrecioBiodiesel" />
-                            <label class="drinkcard-cc PrecioBiodiesel"for="PrecioBiodiesel"></label>
-                        </div>
-                    </form>
-				</div>
-				<div class="col-md-4">
-					<h2>
-						Heading
-					</h2>
-					<p>
-						Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					</p>
-					<p>
-						<a class="btn" href="#">View details »</a>
-					</p>
-				</div>
-			</div>
-
-</div>
-
-
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
+       
 </div>
 @endsection
 @section('styles')
@@ -89,6 +106,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
     <scrip src="{{ asset('js/clustermarkersVAR.js') }}"></script>
 <script>
+    var AGLA = new L.icon({iconUrl: '{{ asset("icons/AGLA.png") }}',iconSize:[50, 50],});
+    var ALCAMPO = new L.icon({iconUrl: '{{ asset("icons/ALCAMPO.png") }}',iconSize:[50, 50],});
+    var AVANZAOIL = new L.icon({iconUrl: '{{ asset("icons/AVANZAOIL.png") }}',iconSize:[50, 50],});
+    var AVIA = new L.icon({iconUrl: '{{ asset("icons/AVIA.png") }}',iconSize:[50, 50],});
+    var BALLENOIL = new L.icon({iconUrl: '{{ asset("icons/BALLENOIL.png") }}',iconSize:[50, 50],});
+    var BONAREA = new L.icon({iconUrl: '{{ asset("icons/BONAREA.png") }}',iconSize:[50, 50],});
+    var BP = new L.icon({iconUrl: '{{ asset("icons/BP.png") }}',iconSize:[50, 50],});
+    var CAMPSA = new L.icon({iconUrl: '{{ asset("icons/CAMPSA.png") }}',iconSize:[50, 50],});
+    var CARREFOUR = new L.icon({iconUrl: '{{ asset("icons/CARREFOUR.png") }}',iconSize:[50, 50],});
+    var CEPSA = new L.icon({iconUrl: '{{ asset("icons/CEPSA.png") }}',iconSize:[50, 50],});
+    var DISA = new L.icon({iconUrl: '{{ asset("icons/DISA.png") }}',iconSize:[50, 50],});
+    var EROSKI = new L.icon({iconUrl: '{{ asset("icons/EROSKI.png") }}',iconSize:[50, 50],});
+    var ESCLATOIL = new L.icon({iconUrl: '{{ asset("icons/ESCLATOIL.png") }}',iconSize:[50, 50],});
+    var GALP = new L.icon({iconUrl: '{{ asset("icons/GALP.png") }}',iconSize:[50, 50],});
+    var GASEXPRESS = new L.icon({iconUrl: '{{ asset("icons/GASEXPRESS.png") }}',iconSize:[50, 50],});
+    var IBERDOEX = new L.icon({iconUrl: '{{ asset("icons/IBERDOEX.png") }}',iconSize:[50, 50],});
+    var MEROIL = new L.icon({iconUrl: '{{ asset("icons/MEROIL.png") }}',iconSize:[50, 50],});
+    var NATURGY = new L.icon({iconUrl: '{{ asset("icons/NATURGY.png") }}',iconSize:[50, 50],});
+    var OTROS = new L.icon({iconUrl: '{{ asset("icons/OTROS.png") }}',iconSize:[50, 50],});
+    var PETREM = new L.icon({iconUrl: '{{ asset("icons/PETREM.png") }}',iconSize:[50, 50],});
+    var PETRONOR = new L.icon({iconUrl: '{{ asset("icons/PETRONOR.png") }}',iconSize:[50, 50],});
+    var PETROPRIX = new L.icon({iconUrl: '{{ asset("icons/PETROPRIX.png") }}',iconSize:[50, 50],});
+    var PLENOIL = new L.icon({iconUrl: '{{ asset("icons/PLENOIL.png") }}',iconSize:[50, 50],});
+    var Q8 = new L.icon({iconUrl: '{{ asset("icons/Q8.png") }}',iconSize:[50, 50],});
+    var REPSOL = new L.icon({iconUrl: '{{ asset("icons/REPSOL.png") }}',iconSize:[50, 50],});
+    var SHELL = new L.icon({iconUrl: '{{ asset("icons/SHELL.png") }}',iconSize:[50, 50],});
+    var TAMOIL = new L.icon({iconUrl: '{{ asset("icons/TAMOIL.png") }}',iconSize:[50, 50],});
+    var VALCARCE = new L.icon({iconUrl: '{{ asset("icons/VALCARCE.png") }}',iconSize:[50, 50],});
+
+
+
     var map = L.map('mapid').setView([40.4165001 , -3.7025599], 6);
     var baseUrl = "{{ url('/') }}";
 
@@ -155,16 +203,113 @@
 
     axios.get('{{ route('api.gasolineras.index') }}')
     .then(function (response) {
-        console.log(response.data.features[0].properties);
+        //console.log(response.data.features[0].properties);
 
         
     
 
         for (var i = 0; i < response.data.features.length; i++) {
             var procesado = response.data.features[i].properties.Provincia;
+            var iconomarca = REPSOL;
+            switch (response.data.features[i].properties.Rotulo) {
+                case "REPSOL":
+                    var iconomarca = REPSOL;
+                    break;
+                case "CEPSA":
+                    var iconomarca = CEPSA;
+                    break;
+                case "GALP":
+                    var iconomarca = GALP;
+                    break;
+                case "SHELL":
+                    var iconomarca = SHELL;
+                    break;
+                case "BP":
+                    var iconomarca = BP;
+                    break;
+                case "PETRONOR":
+                    var iconomarca = PETRONOR;
+                    break;
+                case "AVIA":
+                    var iconomarca = AVIA;
+                    break;
+                case "CARREFOUR":
+                    var iconomarca = CARREFOUR;
+                    break;
+                case "BALLENOIL":
+                    var iconomarca = BALLENOIL;
+                    break;
+                case "CAMPSA":
+                    var iconomarca = CAMPSA;
+                    break;
+                case "Q8":
+                    var iconomarca = Q8;
+                    break;
+                case "PETROPRIX":
+                    var iconomarca = PETROPRIX;
+                    break;
+                case "BONAREA":
+                    var iconomarca = BONAREA;
+                    break;
+                case "VALCARCE":
+                    var iconomarca = VALCARCE;
+                    break;
+                case "ESCLATOIL":
+                    var iconomarca = ESCLATOIL;
+                    break;
+                case "AGLA":
+                    var iconomarca = AGLA;
+                    break;
+                case "ALCAMPO":
+                    var iconomarca = ALCAMPO;
+                    break;
+                case "EROSKI":
+                    var iconomarca = EROSKI;
+                    break;
+                case "MEROIL":
+                    var iconomarca = MEROIL;
+                    break;
+                case "GASEXPRESS":
+                    var iconomarca = GASEXPRESS;
+                    break;
+                case "PLENOIL":
+                    var iconomarca = PLENOIL;
+                    break;
+                case "DISA":
+                    var iconomarca = DISA;
+                    break;
+                case "TAMOIL":
+                    var iconomarca = TAMOIL;
+                    break;
+                case "IBERDOEX":
+                    var iconomarca = IBERDOEX;
+                    break;
+                case "NATURGY":
+                    var iconomarca = NATURGY;
+                    break;
+                case "PETREM":
+                    var iconomarca = PETREM;
+                    break;
+                case "AVANZA OIL":
+                    var iconomarca = AVANZAOIL;
+                    break;
+                case "AVANZA":
+                    if((response.data.features[i].properties.Municipio)=="Vilamalla"){
+                        var iconomarca = AVANZAOIL;
+                    }
+                    else{
+                        var iconomarca = OTROS;
+                    }
+                    
+                    break;
+                default:
+                    var iconomarca = OTROS;
+                    break;
+            }
+
             procesado = procesado.split(" ", 1);
-            console.log(procesado[0])
-            this[procesado[0]].addLayer(new L.marker([parseFloat(response.data.features[i].properties.Latitud), parseFloat(response.data.features[i].properties.Longitud)]).bindPopup("hola"));
+            //console.log(procesado[0])
+            this[procesado[0]].addLayer(new L.marker([parseFloat(response.data.features[i].properties.Latitud), parseFloat(response.data.features[i].properties.Longitud)], {icon:iconomarca }).bindPopup("hola"));
         };
 
        // this.cluster2.addLayer(ubi);
