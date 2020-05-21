@@ -29,7 +29,33 @@ class GasolineraController extends Controller
                         $gasolinera->Longitud,
                         $gasolinera->Latitud,
                     ],
-                    'Ubication' => [
+                ],
+            ];
+        });
+
+        return response()->json([
+            'type'     => 'FeatureCollection',
+            'features' => $geoJSONdata,
+        ]);
+    }
+
+    public function filtro(Request $request)
+    {
+
+        $condicions = ['IDCCAA' => $request->comarca, 'IDProvincia' => $request->provincia, 'IDMunicipio' => $request->municipio];
+
+
+
+        $Gasolinera = Gasolinera::where($condicions)->orderBy($request->gasolina,'asc')->get();
+
+
+        $geoJSONdata = $Gasolinera->map(function ($gasolinera) {
+            return [
+                'type'       => 'Feature',
+                'properties' => new GasolineraResource($gasolinera),
+                'geometry'   => [
+                    'type'        => 'Point',
+                    'coordinates' => [
                         $gasolinera->Longitud,
                         $gasolinera->Latitud,
                     ],
@@ -41,9 +67,5 @@ class GasolineraController extends Controller
             'type'     => 'FeatureCollection',
             'features' => $geoJSONdata,
         ]);
-    }
-
-    public function show(Gasolinera $gasolinera)
-    {
     }
 }

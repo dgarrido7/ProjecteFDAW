@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comunidade;
+use App\Provincia;
+use App\Municipio;
 
 class GeneralMapController extends Controller
 {
@@ -14,6 +17,9 @@ class GeneralMapController extends Controller
      */
     public function index(Request $request)
     {
-        return view('Parts.map');
+        $comunidades = Comunidade::all();
+        $provincias = Provincia::all();
+        $municipios = Municipio::all();
+        return view('Parts.map',compact('comunidades','provincias','municipios'));
     }
 }

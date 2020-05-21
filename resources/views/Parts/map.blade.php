@@ -5,63 +5,66 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="jumbotron p-0">
-                <form>
+    
                     <div class="row align-items-center justify-content-center">
-                    <div class="col-md-2 pt-3">
+                    <div class="col-md-3 pt-3">
                            <div class="form-group ">
-                              <select id="inputState " class="form-control">
-                                <option selected>Brand</option>
-                                <option>BMW</option>
-                                <option>Audi</option>
-                                <option>Maruti</option>
-                                <option>Tesla</option>
+                              <select id="comarca" class="form-control">
+                              <option disabled selected>Seleccionar Comunidad</option>
+                              @foreach ($comunidades as $comunidad)
+                                    <option value='{{ $comunidad->Id }}'>{{ $comunidad->Nombre }}</option>
+                              @endforeach
                               </select>
                            </div>
                         </div>
-                		<div class="col-md-2 pt-3">
+                		<div class="col-md-3 pt-3">
                            <div class="form-group">
-                              <select id="inputState" class="form-control">
-                                <option selected>Model</option>
-                                <option>BMW</option>
-                                <option>Audi</option>
-                                <option>Maruti</option>
-                                <option>Tesla</option>
+                              <select id="provincia" class="form-control">
+                              <option disabled selected>Seleccionar Provincia</option>
                               </select>
                            </div>
                         </div>
-                        <div class="col-md-2 pt-3">
+                        <div class="col-md-3 pt-3">
                             <div class="form-group">
-                              <select id="inputState" class="form-control">
-                                <option selected>Budget</option>
-                                <option>BMW</option>
-                                <option>Audi</option>
-                                <option>Maruti</option>
-                                <option>Tesla</option>
-                              </select>
-                            </div>
-                        </div>
-                        <div class="col-md-2 pt-3">
-                            <div class="form-group">
-                              <select id="inputState" class="form-control">
-                                <option selected>Type</option>
-                                <option>BMW</option>
-                                <option>Audi</option>
-                                <option>Maruti</option>
-                                <option>Tesla</option>
+                              <select id="municipio" class="form-control">
+                              <option disabled selected>Seleccionar Municipio</option>
                               </select>
                             </div>
                         </div>
                         <div class="col-md-2">
-            	           <button type="button" class="btn btn-primary btn-block">Search</button>
+            	           <button type="button" class="btn btn-primary btn-block" onclick=filtrar()>Filtrar</button>
             	        </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body" id="mapid"></div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div id="boxlist">
+                                     <table id="tablelist" class=" d-none table table-sm table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Icono</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th class="text-center">Centrar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                    <div id="boxmap" class="card col-md-12">
+                                        <div class="card-body" id="mapid"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-12">
                             <div class="cc-selector">
-                                <input id="PrecioGasolina95" type="radio" name="Fuel-card" value="PrecioGasolina95" />
+                                <input id="PrecioGasolina95" type="radio" name="Fuel-card" value="PrecioGasolina95" checked />
                                 <label class="drinkcard-cc PrecioGasolina95"for="PrecioGasolina95"></label>
                                 <input id="PrecioGasolina98" type="radio" name="Fuel-card" value="PrecioGasolina98" />
                                 <label class="drinkcard-cc PrecioGasolina98" for="PrecioGasolina98"></label>
@@ -76,7 +79,6 @@
                             </div>
                         </div>
                     </div>
-                </form>
 			</div>
 		</div>
 	</div>
@@ -106,34 +108,72 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
     <scrip src="{{ asset('js/clustermarkersVAR.js') }}"></script>
 <script>
-    var AGLA = new L.icon({iconUrl: '{{ asset("icons/AGLA.png") }}',iconSize:[50, 50],});
-    var ALCAMPO = new L.icon({iconUrl: '{{ asset("icons/ALCAMPO.png") }}',iconSize:[50, 50],});
-    var AVANZAOIL = new L.icon({iconUrl: '{{ asset("icons/AVANZAOIL.png") }}',iconSize:[50, 50],});
-    var AVIA = new L.icon({iconUrl: '{{ asset("icons/AVIA.png") }}',iconSize:[50, 50],});
-    var BALLENOIL = new L.icon({iconUrl: '{{ asset("icons/BALLENOIL.png") }}',iconSize:[50, 50],});
-    var BONAREA = new L.icon({iconUrl: '{{ asset("icons/BONAREA.png") }}',iconSize:[50, 50],});
-    var BP = new L.icon({iconUrl: '{{ asset("icons/BP.png") }}',iconSize:[50, 50],});
-    var CAMPSA = new L.icon({iconUrl: '{{ asset("icons/CAMPSA.png") }}',iconSize:[50, 50],});
-    var CARREFOUR = new L.icon({iconUrl: '{{ asset("icons/CARREFOUR.png") }}',iconSize:[50, 50],});
-    var CEPSA = new L.icon({iconUrl: '{{ asset("icons/CEPSA.png") }}',iconSize:[50, 50],});
-    var DISA = new L.icon({iconUrl: '{{ asset("icons/DISA.png") }}',iconSize:[50, 50],});
-    var EROSKI = new L.icon({iconUrl: '{{ asset("icons/EROSKI.png") }}',iconSize:[50, 50],});
-    var ESCLATOIL = new L.icon({iconUrl: '{{ asset("icons/ESCLATOIL.png") }}',iconSize:[50, 50],});
-    var GALP = new L.icon({iconUrl: '{{ asset("icons/GALP.png") }}',iconSize:[50, 50],});
-    var GASEXPRESS = new L.icon({iconUrl: '{{ asset("icons/GASEXPRESS.png") }}',iconSize:[50, 50],});
-    var IBERDOEX = new L.icon({iconUrl: '{{ asset("icons/IBERDOEX.png") }}',iconSize:[50, 50],});
-    var MEROIL = new L.icon({iconUrl: '{{ asset("icons/MEROIL.png") }}',iconSize:[50, 50],});
-    var NATURGY = new L.icon({iconUrl: '{{ asset("icons/NATURGY.png") }}',iconSize:[50, 50],});
-    var OTROS = new L.icon({iconUrl: '{{ asset("icons/OTROS.png") }}',iconSize:[50, 50],});
-    var PETREM = new L.icon({iconUrl: '{{ asset("icons/PETREM.png") }}',iconSize:[50, 50],});
-    var PETRONOR = new L.icon({iconUrl: '{{ asset("icons/PETRONOR.png") }}',iconSize:[50, 50],});
-    var PETROPRIX = new L.icon({iconUrl: '{{ asset("icons/PETROPRIX.png") }}',iconSize:[50, 50],});
-    var PLENOIL = new L.icon({iconUrl: '{{ asset("icons/PLENOIL.png") }}',iconSize:[50, 50],});
-    var Q8 = new L.icon({iconUrl: '{{ asset("icons/Q8.png") }}',iconSize:[50, 50],});
-    var REPSOL = new L.icon({iconUrl: '{{ asset("icons/REPSOL.png") }}',iconSize:[50, 50],});
-    var SHELL = new L.icon({iconUrl: '{{ asset("icons/SHELL.png") }}',iconSize:[50, 50],});
-    var TAMOIL = new L.icon({iconUrl: '{{ asset("icons/TAMOIL.png") }}',iconSize:[50, 50],});
-    var VALCARCE = new L.icon({iconUrl: '{{ asset("icons/VALCARCE.png") }}',iconSize:[50, 50],});
+
+    $( "#provincia" ).prop( "disabled", true );
+    $( "#municipio" ).prop( "disabled", true );
+
+    $( "#comarca" ).change(function() {
+        var provinciasjs = @json($provincias);
+        var comarcaAct=$("#comarca").val();
+        var isDisabled = $('municipio').prop('disabled');
+        $("#provincia").children().slice(1).remove();
+        $("#municipio").children().slice(1).remove();
+        for(var d=0;d<provinciasjs.length;d++){
+            if(provinciasjs[d].id_comarca==comarcaAct){
+                var o = new Option(provinciasjs[d].nombre,provinciasjs[d].id);
+                $(o).html(provinciasjs[d].nombre);
+                $("#provincia").append(o);
+                $("#provincia").prop("disabled", false );
+            }
+            if(!isDisabled){
+            $('#provincia').trigger('change');
+            }
+        }
+    });
+
+
+    $( "#provincia" ).change(function() {
+        var municipiosjs = @json($municipios);
+        var provinciaAct=$("#provincia").val();
+        $("#municipio").children().slice(1).remove();
+        for(var y=0;y<municipiosjs.length;y++){
+            if(municipiosjs[y].id_provincia==provinciaAct){
+                var u = new Option(municipiosjs[y].nombre,municipiosjs[y].id);
+                $(u).html(municipiosjs[y].nombre);
+                $("#municipio").append(u);
+                $("#municipio").prop("disabled", false );
+            }
+        }
+    });
+
+    var AGLA = new L.icon({iconUrl: '{{ asset("icons/AGLA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var ALCAMPO = new L.icon({iconUrl: '{{ asset("icons/ALCAMPO.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var AVANZAOIL = new L.icon({iconUrl: '{{ asset("icons/AVANZAOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var AVIA = new L.icon({iconUrl: '{{ asset("icons/AVIA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var BALLENOIL = new L.icon({iconUrl: '{{ asset("icons/BALLENOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var BONAREA = new L.icon({iconUrl: '{{ asset("icons/BONAREA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var BP = new L.icon({iconUrl: '{{ asset("icons/BP.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var CAMPSA = new L.icon({iconUrl: '{{ asset("icons/CAMPSA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var CARREFOUR = new L.icon({iconUrl: '{{ asset("icons/CARREFOUR.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var CEPSA = new L.icon({iconUrl: '{{ asset("icons/CEPSA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var DISA = new L.icon({iconUrl: '{{ asset("icons/DISA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var EROSKI = new L.icon({iconUrl: '{{ asset("icons/EROSKI.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var ESCLATOIL = new L.icon({iconUrl: '{{ asset("icons/ESCLATOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var GALP = new L.icon({iconUrl: '{{ asset("icons/GALP.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var GASEXPRESS = new L.icon({iconUrl: '{{ asset("icons/GASEXPRESS.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var IBERDOEX = new L.icon({iconUrl: '{{ asset("icons/IBERDOEX.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var MEROIL = new L.icon({iconUrl: '{{ asset("icons/MEROIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var NATURGY = new L.icon({iconUrl: '{{ asset("icons/NATURGY.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var OTROS = new L.icon({iconUrl: '{{ asset("icons/OTROS.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var PETREM = new L.icon({iconUrl: '{{ asset("icons/PETREM.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var PETRONOR = new L.icon({iconUrl: '{{ asset("icons/PETRONOR.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var PETROPRIX = new L.icon({iconUrl: '{{ asset("icons/PETROPRIX.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var PLENOIL = new L.icon({iconUrl: '{{ asset("icons/PLENOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var Q8 = new L.icon({iconUrl: '{{ asset("icons/Q8.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var REPSOL = new L.icon({iconUrl: '{{ asset("icons/REPSOL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var SHELL = new L.icon({iconUrl: '{{ asset("icons/SHELL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var TAMOIL = new L.icon({iconUrl: '{{ asset("icons/TAMOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var VALCARCE = new L.icon({iconUrl: '{{ asset("icons/VALCARCE.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
 
 
 
@@ -142,245 +182,186 @@
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         minZoom: 6,
+        maxZoom:15,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     
-    var ÁLAVA = new L.MarkerClusterGroup();
-    var ALBACETE = new L.MarkerClusterGroup();
-    var ALICANTE = new L.MarkerClusterGroup();
-    var ALMERÍA = new L.MarkerClusterGroup();
-    var ASTURIAS = new L.MarkerClusterGroup();
-    var ÁVILA = new L.MarkerClusterGroup();
-    var BADAJOZ = new L.MarkerClusterGroup();
-    var BALEARS = new L.MarkerClusterGroup();
-    var BARCELONA = new L.MarkerClusterGroup();
-    var BURGOS = new L.MarkerClusterGroup();
-    var CÁCERES = new L.MarkerClusterGroup();
-    var CÁDIZ = new L.MarkerClusterGroup();
-    var CANTABRIA = new L.MarkerClusterGroup();
-    var CASTELLÓN = new L.MarkerClusterGroup();
-    var CEUTA = new L.MarkerClusterGroup();
-    var CIUDAD = new L.MarkerClusterGroup();
-    var CÓRDOBA = new L.MarkerClusterGroup();
-    var CORUÑA  = new L.MarkerClusterGroup();
-    var CUENCA = new L.MarkerClusterGroup();
-    var GIRONA = new L.MarkerClusterGroup();
-    var GRANADA = new L.MarkerClusterGroup();
-    var GUADALAJARA = new L.MarkerClusterGroup();
-    var GUIPÚZCOA = new L.MarkerClusterGroup();
-    var HUELVA = new L.MarkerClusterGroup();
-    var HUESCA = new L.MarkerClusterGroup();
-    var JAÉN = new L.MarkerClusterGroup();
-    var LEÓN = new L.MarkerClusterGroup();
-    var LLEIDA = new L.MarkerClusterGroup();
-    var LUGO = new L.MarkerClusterGroup();
-    var MADRID = new L.MarkerClusterGroup();
-    var MÁLAGA = new L.MarkerClusterGroup();
-    var MELILLA = new L.MarkerClusterGroup();
-    var MURCIA = new L.MarkerClusterGroup();
-    var NAVARRA = new L.MarkerClusterGroup();
-    var OURENSE = new L.MarkerClusterGroup();
-    var PALENCIA = new L.MarkerClusterGroup();
-    var PALMAS = new L.MarkerClusterGroup();
-    var PONTEVEDRA = new L.MarkerClusterGroup();
-    var RIOJA = new L.MarkerClusterGroup();
-    var SALAMANCA = new L.MarkerClusterGroup();
-    var SANTA = new L.MarkerClusterGroup();
-    var SEGOVIA = new L.MarkerClusterGroup();
-    var SEVILLA = new L.MarkerClusterGroup();
-    var SORIA = new L.MarkerClusterGroup();
-    var TARRAGONA = new L.MarkerClusterGroup();
-    var TERUEL = new L.MarkerClusterGroup();
-    var TOLEDO = new L.MarkerClusterGroup();
-    var VALENCIA = new L.MarkerClusterGroup();
-    var VALLADOLID = new L.MarkerClusterGroup();
-    var VIZCAYA = new L.MarkerClusterGroup();
-    var ZAMORA = new L.MarkerClusterGroup();
-    var ZARAGOZA = new L.MarkerClusterGroup();
-    
+    var arrayClusters = new Array (52);
 
-
+    for(var i=0;i<arrayClusters.length;i++){
+        arrayClusters[i] = new L.MarkerClusterGroup({disableClusteringAtZoom: 15});
+     }
+   
 
     axios.get('{{ route('api.gasolineras.index') }}')
     .then(function (response) {
-        //console.log(response.data.features[0].properties);
-
-        
-    
-
         for (var i = 0; i < response.data.features.length; i++) {
-            var procesado = response.data.features[i].properties.Provincia;
-            var iconomarca = REPSOL;
-            switch (response.data.features[i].properties.Rotulo) {
-                case "REPSOL":
-                    var iconomarca = REPSOL;
-                    break;
-                case "CEPSA":
-                    var iconomarca = CEPSA;
-                    break;
-                case "GALP":
-                    var iconomarca = GALP;
-                    break;
-                case "SHELL":
-                    var iconomarca = SHELL;
-                    break;
-                case "BP":
-                    var iconomarca = BP;
-                    break;
-                case "PETRONOR":
-                    var iconomarca = PETRONOR;
-                    break;
-                case "AVIA":
-                    var iconomarca = AVIA;
-                    break;
-                case "CARREFOUR":
-                    var iconomarca = CARREFOUR;
-                    break;
-                case "BALLENOIL":
-                    var iconomarca = BALLENOIL;
-                    break;
-                case "CAMPSA":
-                    var iconomarca = CAMPSA;
-                    break;
-                case "Q8":
-                    var iconomarca = Q8;
-                    break;
-                case "PETROPRIX":
-                    var iconomarca = PETROPRIX;
-                    break;
-                case "BONAREA":
-                    var iconomarca = BONAREA;
-                    break;
-                case "VALCARCE":
-                    var iconomarca = VALCARCE;
-                    break;
-                case "ESCLATOIL":
-                    var iconomarca = ESCLATOIL;
-                    break;
-                case "AGLA":
-                    var iconomarca = AGLA;
-                    break;
-                case "ALCAMPO":
-                    var iconomarca = ALCAMPO;
-                    break;
-                case "EROSKI":
-                    var iconomarca = EROSKI;
-                    break;
-                case "MEROIL":
-                    var iconomarca = MEROIL;
-                    break;
-                case "GASEXPRESS":
-                    var iconomarca = GASEXPRESS;
-                    break;
-                case "PLENOIL":
-                    var iconomarca = PLENOIL;
-                    break;
-                case "DISA":
-                    var iconomarca = DISA;
-                    break;
-                case "TAMOIL":
-                    var iconomarca = TAMOIL;
-                    break;
-                case "IBERDOEX":
-                    var iconomarca = IBERDOEX;
-                    break;
-                case "NATURGY":
-                    var iconomarca = NATURGY;
-                    break;
-                case "PETREM":
-                    var iconomarca = PETREM;
-                    break;
-                case "AVANZA OIL":
-                    var iconomarca = AVANZAOIL;
-                    break;
-                case "AVANZA":
-                    if((response.data.features[i].properties.Municipio)=="Vilamalla"){
-                        var iconomarca = AVANZAOIL;
-                    }
-                    else{
-                        var iconomarca = OTROS;
-                    }
-                    
-                    break;
-                default:
-                    var iconomarca = OTROS;
-                    break;
-            }
-
-            procesado = procesado.split(" ", 1);
+            var procesado = parseInt(response.data.features[i].properties.IDProvincia)-1;
+            var iconomarca = crearmarker(response.data.features[i].properties.Rotulo);
+            
             //console.log(procesado[0])
-            this[procesado[0]].addLayer(new L.marker([parseFloat(response.data.features[i].properties.Latitud), parseFloat(response.data.features[i].properties.Longitud)], {icon:iconomarca }).bindPopup("hola"));
+            this.arrayClusters[procesado].addLayer(new L.marker([parseFloat(response.data.features[i].properties.Latitud), parseFloat(response.data.features[i].properties.Longitud)], {icon:iconomarca }).bindPopup("hola"));
         };
-
-       // this.cluster2.addLayer(ubi);
-
-        // var ubi  =L.geoJSON(response.data, {
-        //     pointToLayer: function(geoJsonPoint, latlng) {
-        //         return L.marker(latlng);
-        //     }
-        // })
-        // .bindPopup(function (layer) {
-        //     return layer.feature.properties.map_popup_content;
-        // });
-
-        // this.cluster1.addLayer(ubi);
     })
     .catch(function (error) {
         console.log(error);
     });
 
+
+    function filtrar(){
+
+        var comarca = document.getElementById('comarca').value;
+        var provincia = document.getElementById('provincia').value;
+        var municipio = document.getElementById('municipio').value;
+        var gasolina = document.querySelector('input[name="Fuel-card"]:checked').value;
+
+        
+
+        $("#boxlist").addClass( "col-md-3" );
+        $("#boxmap").removeClass( "col-md-12" ).addClass( "col-md-9" );
+        $("#tablelist").removeClass( "d-none" )
+        $('#tablelist > tbody').children().remove();
+
+        axios.get("/api/filtro?comarca="+comarca+"&provincia="+provincia+"&municipio="+municipio+"&gasolina="+gasolina)
+        .then(function (response) {
+            for (var i = 0; i < response.data.features.length; i++) {
+
+                if(i<10){
+                    if(i==0){
+                        map.flyTo([response.data.features[i].properties.Latitud, response.data.features[i].properties.Longitud], 11)
+                    }
+                    var iconolista='icons/'+response.data.features[i].properties.Rotulo+'.png';
+                    var iconoerror='icons/OTROS.png';
+                    for(var k=0;response.data.features[i].properties.length;k++){
+                        console.log(response.data.features[i].properties[k]);
+                    }
+                    $('#tablelist > tbody:last-child').append('<tr> <td>hola</td> <td>'+response.data.features[i].properties.Rotulo+'</td> <td>'+response.data.features[i].properties[gasolina]+'</td> <td class="text-center"> <a href="#" onclick="CentrarGasolinera('+response.data.features[i].properties.Latitud+','+response.data.features[i].properties.Longitud+');return false;">Mostrar</a> </td> </tr>');
+                }
+                var procesado = parseInt(response.data.features[i].properties.IDProvincia)-1;
+                var iconomarca = crearmarker(response.data.features[i].properties.Rotulo);
+
+                this.arrayClusters[procesado].addLayer(new L.marker([parseFloat(response.data.features[i].properties.Latitud), parseFloat(response.data.features[i].properties.Longitud)], {icon:iconomarca }).bindPopup("<h1>hola</h1>"));
+            };
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+
+
+        limpiarlayers();
+    }
+
+    function CentrarGasolinera(x,y){
+        map.flyTo([x, y], 15)
+    }
+
+    function limpiarlayers(){
+        for(var i=0;i<arrayClusters.length;i++){
+        arrayClusters[i].clearLayers();
+        }
+    }
+
+    function crearmarker(rotulo){
+
+
+        switch (rotulo) {
+                case "REPSOL":
+                    var icon = REPSOL;
+                    break;
+                case "CEPSA":
+                    var icon = CEPSA;
+                    break;
+                case "GALP":
+                    var icon = GALP;
+                    break;
+                case "SHELL":
+                    var icon = SHELL;
+                    break;
+                case "BP":
+                    var icon = BP;
+                    break;
+                case "PETRONOR":
+                    var icon = PETRONOR;
+                    break;
+                case "AVIA":
+                    var icon = AVIA;
+                    break;
+                case "CARREFOUR":
+                    var icon = CARREFOUR;
+                    break;
+                case "BALLENOIL":
+                    var icon = BALLENOIL;
+                    break;
+                case "CAMPSA":
+                    var icon = CAMPSA;
+                    break;
+                case "Q8":
+                    var icon = Q8;
+                    break;
+                case "PETROPRIX":
+                    var icon = PETROPRIX;
+                    break;
+                case "BONAREA":
+                    var icon = BONAREA;
+                    break;
+                case "VALCARCE":
+                    var icon = VALCARCE;
+                    break;
+                case "ESCLATOIL":
+                    var icon = ESCLATOIL;
+                    break;
+                case "AGLA":
+                    var icon = AGLA;
+                    break;
+                case "ALCAMPO":
+                    var icon = ALCAMPO;
+                    break;
+                case "EROSKI":
+                    var icon = EROSKI;
+                    break;
+                case "MEROIL":
+                    var icon = MEROIL;
+                    break;
+                case "GASEXPRESS":
+                    var icon = GASEXPRESS;
+                    break;
+                case "PLENOIL":
+                    var icon = PLENOIL;
+                    break;
+                case "DISA":
+                    var icon = DISA;
+                    break;
+                case "TAMOIL":
+                    var icon = TAMOIL;
+                    break;
+                case "IBERDOEX":
+                    var icon = IBERDOEX;
+                    break;
+                case "NATURGY":
+                    var icon = NATURGY;
+                    break;
+                case "PETREM":
+                    var icon = PETREM;
+                    break;
+                case "AVANZA OIL":
+                    var icon = AVANZAOIL;
+                    break;
+                case "AVANZA":
+                        var icon = AVANZAOIL;
+                    break;
+                default:
+                    var icon = OTROS;
+                    break;
+            }
+
+            return icon;
+
+    }
    
-    ÁLAVA.addTo(map);
-    ALBACETE.addTo(map);
-    ALICANTE.addTo(map);
-    ALMERÍA.addTo(map);
-    ASTURIAS.addTo(map);
-    ÁVILA.addTo(map);
-    BADAJOZ.addTo(map);
-    BALEARS.addTo(map);
-    BARCELONA.addTo(map);
-    BURGOS.addTo(map);
-    CÁCERES.addTo(map);
-    CÁDIZ.addTo(map);
-    CANTABRIA.addTo(map);
-    CASTELLÓN.addTo(map);
-    CEUTA.addTo(map);
-    CIUDAD.addTo(map);
-    CÓRDOBA.addTo(map);
-    CORUÑA .addTo(map);
-    CUENCA.addTo(map);
-    GIRONA.addTo(map);
-    GRANADA.addTo(map);
-    GUADALAJARA.addTo(map);
-    GUIPÚZCOA.addTo(map);
-    HUELVA.addTo(map);
-    HUESCA.addTo(map);
-    JAÉN.addTo(map);
-    LEÓN.addTo(map);
-    LLEIDA.addTo(map);
-    LUGO.addTo(map);
-    MADRID.addTo(map);
-    MÁLAGA.addTo(map);
-    MELILLA.addTo(map);
-    MURCIA.addTo(map);
-    NAVARRA.addTo(map);
-    OURENSE.addTo(map);
-    PALENCIA.addTo(map);
-    PALMAS.addTo(map);
-    PONTEVEDRA.addTo(map);
-    RIOJA.addTo(map);
-    SALAMANCA.addTo(map);
-    SANTA.addTo(map);
-    SEGOVIA.addTo(map);
-    SEVILLA.addTo(map);
-    SORIA.addTo(map);
-    TARRAGONA.addTo(map);
-    TERUEL.addTo(map);
-    TOLEDO.addTo(map);
-    VALENCIA.addTo(map);
-    VALLADOLID.addTo(map);
-    VIZCAYA.addTo(map);
-    ZAMORA.addTo(map);
-    ZARAGOZA.addTo(map);
+   for(var i=0;i<arrayClusters.length;i++){
+    arrayClusters[i].addTo(map);
+   }
+
 </script>
 @endpush

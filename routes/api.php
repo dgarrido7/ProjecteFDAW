@@ -21,8 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::group(['as' => 'api.', 'namespace' => 'Api'], function () {
-    /*
-     * Gasolineres Endpoints
-     */
     Route::get('gasolineras', 'GasolineraController@index')->name('gasolineras.index');
+    Route::get('filtro', 'GasolineraController@filtro');
 });

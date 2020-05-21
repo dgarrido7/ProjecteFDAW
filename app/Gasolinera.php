@@ -3,6 +3,10 @@
 namespace App;
 
 use App\User;
+use App\Comunidade;
+use App\Municipio;
+use App\Provincia;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Gasolinera extends Model
@@ -13,7 +17,7 @@ class Gasolinera extends Model
      * @var array
      */
     protected $fillable = [
-        'CP', 'Direccion', 'Horario', 'Latitud','Localidad','Longitud','Margen','Municipio','PrecioBiodiesel','PrecioBioetanol','PrecioGasNaturalComprimido','PrecioGasNaturalLiquado','PrecioGasesNaturalesLiquadosPetroleo','PrecioGasoleoA','PrecioGasoleoB','PrecioGasolina95','PrecioGasolina98','PrecioNuevoGasoleoA','Provincia','Remision','Rotulo','TipoVenta','Bioetanol','EsterMetilico','IDEESS','IDMunicipio','IDProvincia','IDCCAA',
+        'CP', 'Direccion', 'Horario', 'Latitud','Localidad','Longitud','Margen','PrecioBiodiesel','PrecioBioetanol','PrecioGasNaturalComprimido','PrecioGasNaturalLiquado','PrecioGasesNaturalesLiquadosPetroleo','PrecioGasoleoA','PrecioGasoleoB','PrecioGasolina95','PrecioGasolina98','PrecioNuevoGasoleoA','Remision','Rotulo','TipoVenta','Bioetanol','EsterMetilico','IDEESS','IDMunicipio','IDProvincia','IDCCAA',
 
 
     ];
@@ -57,6 +61,19 @@ class Gasolinera extends Model
     public function creator()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function comunidades()
+    {
+        return $this->belongsTo('App\Comunidad');
+    }
+    public function provincias()
+    {
+        return $this->belongsTo('App\Provincia');
+    }
+    public function municipios()
+    {
+        return $this->belongsTo('App\Municipio');
     }
 
 
