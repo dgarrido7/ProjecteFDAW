@@ -146,34 +146,34 @@
         }
     });
 
-    var AGLA = new L.icon({iconUrl: '{{ asset("icons/AGLA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var ALCAMPO = new L.icon({iconUrl: '{{ asset("icons/ALCAMPO.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var AVANZAOIL = new L.icon({iconUrl: '{{ asset("icons/AVANZAOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var AVIA = new L.icon({iconUrl: '{{ asset("icons/AVIA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var BALLENOIL = new L.icon({iconUrl: '{{ asset("icons/BALLENOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var BONAREA = new L.icon({iconUrl: '{{ asset("icons/BONAREA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var BP = new L.icon({iconUrl: '{{ asset("icons/BP.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var CAMPSA = new L.icon({iconUrl: '{{ asset("icons/CAMPSA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var CARREFOUR = new L.icon({iconUrl: '{{ asset("icons/CARREFOUR.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var CEPSA = new L.icon({iconUrl: '{{ asset("icons/CEPSA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var DISA = new L.icon({iconUrl: '{{ asset("icons/DISA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var EROSKI = new L.icon({iconUrl: '{{ asset("icons/EROSKI.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var ESCLATOIL = new L.icon({iconUrl: '{{ asset("icons/ESCLATOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var GALP = new L.icon({iconUrl: '{{ asset("icons/GALP.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var GASEXPRESS = new L.icon({iconUrl: '{{ asset("icons/GASEXPRESS.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var IBERDOEX = new L.icon({iconUrl: '{{ asset("icons/IBERDOEX.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var MEROIL = new L.icon({iconUrl: '{{ asset("icons/MEROIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var NATURGY = new L.icon({iconUrl: '{{ asset("icons/NATURGY.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var OTROS = new L.icon({iconUrl: '{{ asset("icons/OTROS.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var PETREM = new L.icon({iconUrl: '{{ asset("icons/PETREM.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var PETRONOR = new L.icon({iconUrl: '{{ asset("icons/PETRONOR.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var PETROPRIX = new L.icon({iconUrl: '{{ asset("icons/PETROPRIX.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var PLENOIL = new L.icon({iconUrl: '{{ asset("icons/PLENOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var Q8 = new L.icon({iconUrl: '{{ asset("icons/Q8.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var REPSOL = new L.icon({iconUrl: '{{ asset("icons/REPSOL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var SHELL = new L.icon({iconUrl: '{{ asset("icons/SHELL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var TAMOIL = new L.icon({iconUrl: '{{ asset("icons/TAMOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
-    var VALCARCE = new L.icon({iconUrl: '{{ asset("icons/VALCARCE.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],});
+    var AGLA = new L.icon({iconUrl: '{{ asset("icons/AGLA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var ALCAMPO = new L.icon({iconUrl: '{{ asset("icons/ALCAMPO.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var AVANZAOIL = new L.icon({iconUrl: '{{ asset("icons/AVANZAOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var AVIA = new L.icon({iconUrl: '{{ asset("icons/AVIA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var BALLENOIL = new L.icon({iconUrl: '{{ asset("icons/BALLENOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var BONAREA = new L.icon({iconUrl: '{{ asset("icons/BONAREA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var BP = new L.icon({iconUrl: '{{ asset("icons/BP.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var CAMPSA = new L.icon({iconUrl: '{{ asset("icons/CAMPSA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var CARREFOUR = new L.icon({iconUrl: '{{ asset("icons/CARREFOUR.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var CEPSA = new L.icon({iconUrl: '{{ asset("icons/CEPSA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var DISA = new L.icon({iconUrl: '{{ asset("icons/DISA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var EROSKI = new L.icon({iconUrl: '{{ asset("icons/EROSKI.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var ESCLATOIL = new L.icon({iconUrl: '{{ asset("icons/ESCLATOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var GALP = new L.icon({iconUrl: '{{ asset("icons/GALP.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var GASEXPRESS = new L.icon({iconUrl: '{{ asset("icons/GASEXPRESS.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var IBERDOEX = new L.icon({iconUrl: '{{ asset("icons/IBERDOEX.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var MEROIL = new L.icon({iconUrl: '{{ asset("icons/MEROIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var NATURGY = new L.icon({iconUrl: '{{ asset("icons/NATURGY.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var OTROS = new L.icon({iconUrl: '{{ asset("icons/OTROS.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var PETREM = new L.icon({iconUrl: '{{ asset("icons/PETREM.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var PETRONOR = new L.icon({iconUrl: '{{ asset("icons/PETRONOR.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var PETROPRIX = new L.icon({iconUrl: '{{ asset("icons/PETROPRIX.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var PLENOIL = new L.icon({iconUrl: '{{ asset("icons/PLENOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var Q8 = new L.icon({iconUrl: '{{ asset("icons/Q8.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var REPSOL = new L.icon({iconUrl: '{{ asset("icons/REPSOL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var SHELL = new L.icon({iconUrl: '{{ asset("icons/SHELL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var TAMOIL = new L.icon({iconUrl: '{{ asset("icons/TAMOIL.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
+    var VALCARCE = new L.icon({iconUrl: '{{ asset("icons/VALCARCE.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
 
 
 
@@ -200,7 +200,7 @@
             var iconomarca = crearmarker(response.data.features[i].properties.Rotulo);
             
             //console.log(procesado[0])
-            this.arrayClusters[procesado].addLayer(new L.marker([parseFloat(response.data.features[i].properties.Latitud), parseFloat(response.data.features[i].properties.Longitud)], {icon:iconomarca }).bindPopup("hola"));
+            this.arrayClusters[procesado].addLayer(new L.marker([parseFloat(response.data.features[i].properties.Latitud), parseFloat(response.data.features[i].properties.Longitud)], {icon:iconomarca }).bindPopup("<h2 class='text-center'>Información</h2><table id='tablePreview' class='table table-sm table-bordered table-striped table-hover'> <tbody> <tr> <td><strong>Nombre</strong></td> <td>"+response.data.features[i].properties.Rotulo+"</td> </tr><tr> <td><strong>CP</strong></td> <td>"+response.data.features[i].properties.CP+"</td> </tr> <tr> <td><strong>Direccion</strong></td> <td>"+response.data.features[i].properties.Direccion+"</td> </tr> <tr> <td><strong>Horario</strong></td> <td>"+response.data.features[i].properties.Horario+"</td> </tr> <tr> <td><strong>Gasolina 95</strong></td> <td>"+response.data.features[i].properties.PrecioGasolina95+"</td> </tr> <tr> <td><strong>Gasolina 98</strong></td> <td>"+response.data.features[i].properties.PrecioGasolina98+"</td> </tr> <tr> <td><strong>Gasoleo A</strong></td> <td>"+response.data.features[i].properties.PrecioGasoleoA+"</td> </tr><tr> <td><strong>Gasoleo B</strong></td> <td>"+response.data.features[i].properties.PrecioGasoleoB+"</td> </tr> <tr> <td><strong>Biodiesel</strong></td> <td>"+response.data.features[i].properties.PrecioBiodiesel+"</td> </tr> <tr> <td><strong>Bioetanol</strong></td> <td>"+response.data.features[i].properties.PrecioBioetanol+"</td> </tr> </tbody> </table>"));
         };
     })
     .catch(function (error) {
@@ -240,7 +240,7 @@
                 var procesado = parseInt(response.data.features[i].properties.IDProvincia)-1;
                 var iconomarca = crearmarker(response.data.features[i].properties.Rotulo);
 
-                this.arrayClusters[procesado].addLayer(new L.marker([parseFloat(response.data.features[i].properties.Latitud), parseFloat(response.data.features[i].properties.Longitud)], {icon:iconomarca }).bindPopup("<h1>hola</h1>"));
+                this.arrayClusters[procesado].addLayer(new L.marker([parseFloat(response.data.features[i].properties.Latitud), parseFloat(response.data.features[i].properties.Longitud)], {icon:iconomarca }).bindPopup("<h2 class='text-center'>Información</h2><table id='tablePreview' class='table table-sm table-bordered table-striped table-hover'> <tbody> <tr> <td><strong>Nombre</strong></td> <td>"+response.data.features[i].properties.Rotulo+"</td> </tr><tr> <td><strong>CP</strong></td> <td>"+response.data.features[i].properties.CP+"</td> </tr> <tr> <td><strong>Direccion</strong></td> <td>"+response.data.features[i].properties.Direccion+"</td> </tr> <tr> <td><strong>Horario</strong></td> <td>"+response.data.features[i].properties.Horario+"</td> </tr> <tr> <td><strong>"+gasolina+"</strong></td> <td>"+response.data.features[i].properties[gasolina]+"</td> </tr> </tbody> </table>"));
             };
         })
         .catch(function (error) {
