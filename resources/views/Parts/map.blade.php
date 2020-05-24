@@ -64,18 +64,32 @@
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-12">
                             <div class="cc-selector">
-                                <input id="PrecioGasolina95" type="radio" name="Fuel-card" value="PrecioGasolina95" checked />
-                                <label class="drinkcard-cc PrecioGasolina95"for="PrecioGasolina95"></label>
-                                <input id="PrecioGasolina98" type="radio" name="Fuel-card" value="PrecioGasolina98" />
-                                <label class="drinkcard-cc PrecioGasolina98" for="PrecioGasolina98"></label>
-                                <input id="PrecioGasoleoA" type="radio" name="Fuel-card" value="PrecioGasoleoA" />
-                                <label class="drinkcard-cc PrecioGasoleoA"for="PrecioGasoleoA"></label>
-                                <input id="PrecioGasoleoB" type="radio" name="Fuel-card" value="PrecioGasoleoB" />
-                                <label class="drinkcard-cc PrecioGasoleoB"for="PrecioGasoleoB"></label>
-                                <input id="PrecioBiodiesel" type="radio" name="Fuel-card" value="PrecioBiodiesel" />
-                                <label class="drinkcard-cc PrecioBiodiesel"for="PrecioBiodiesel"></label>
-                                <input id="PrecioBioetanol" type="radio" name="Fuel-card" value="PrecioBioetanol" />
-                                <label class="drinkcard-cc PrecioBioetanol"for="PrecioBioetanol"></label>
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-auto">
+                                    <input id="PrecioGasolina95" type="radio" name="Fuel-card" value="PrecioGasolina95" checked />
+                                    <label class="drinkcard-cc PrecioGasolina95"for="PrecioGasolina95"></label>
+                                </div>
+                                <div class="col-auto">
+                                    <input id="PrecioGasolina98" type="radio" name="Fuel-card" value="PrecioGasolina98" />
+                                    <label class="drinkcard-cc PrecioGasolina98" for="PrecioGasolina98"></label>
+                                </div>
+                                <div class="col-auto">
+                                    <input id="PrecioGasoleoA" type="radio" name="Fuel-card" value="PrecioGasoleoA" />
+                                    <label class="drinkcard-cc PrecioGasoleoA"for="PrecioGasoleoA"></label>
+                                </div>
+                                <div class="col-auto">
+                                    <input id="PrecioGasoleoB" type="radio" name="Fuel-card" value="PrecioGasoleoB" />
+                                    <label class="drinkcard-cc PrecioGasoleoB"for="PrecioGasoleoB"></label>
+                                </div>
+                                <div class="col-auto">
+                                    <input id="PrecioBiodiesel" type="radio" name="Fuel-card" value="PrecioBiodiesel" />
+                                    <label class="drinkcard-cc PrecioBiodiesel"for="PrecioBiodiesel"></label>
+                                </div>
+                                <div class="col-auto">
+                                    <input id="PrecioBioetanol" type="radio" name="Fuel-card" value="PrecioBioetanol" />
+                                    <label class="drinkcard-cc PrecioBioetanol"for="PrecioBioetanol"></label>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>
