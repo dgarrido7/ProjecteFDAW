@@ -11,6 +11,7 @@
                            <div class="form-group ">
                               <select id="comarca" class="form-control">
                               <option disabled selected>Seleccionar Comunidad</option>
+                              <option value='Todas'>Todas</option>
                               @foreach ($comunidades as $comunidad)
                                     <option value='{{ $comunidad->Id }}'>{{ $comunidad->Nombre }}</option>
                               @endforeach
@@ -132,16 +133,19 @@
         var isDisabled = $('municipio').prop('disabled');
         $("#provincia").children().slice(1).remove();
         $("#municipio").children().slice(1).remove();
+        var o = new Option("Todas","Todas");
+        $(o).html("Todas");
+        $("#provincia").append(o);
         for(var d=0;d<provinciasjs.length;d++){
             if(provinciasjs[d].id_comarca==comarcaAct){
                 var o = new Option(provinciasjs[d].nombre,provinciasjs[d].id);
                 $(o).html(provinciasjs[d].nombre);
                 $("#provincia").append(o);
-                $("#provincia").prop("disabled", false );
             }
-            if(!isDisabled){
+        }
+        $("#provincia").prop("disabled", false );
+        if(!isDisabled){
             $('#provincia').trigger('change');
-            }
         }
     });
 
@@ -150,14 +154,17 @@
         var municipiosjs = @json($municipios);
         var provinciaAct=$("#provincia").val();
         $("#municipio").children().slice(1).remove();
+        var u = new Option("Todas","Todas");
+        $(u).html("Todas");
+        $("#municipio").append(u);
         for(var y=0;y<municipiosjs.length;y++){
             if(municipiosjs[y].id_provincia==provinciaAct){
                 var u = new Option(municipiosjs[y].nombre,municipiosjs[y].id);
                 $(u).html(municipiosjs[y].nombre);
                 $("#municipio").append(u);
-                $("#municipio").prop("disabled", false );
             }
         }
+        $("#municipio").prop("disabled", false );
     });
 
     var AGLA = new L.icon({iconUrl: '{{ asset("icons/AGLA.png") }}',iconSize:[50, 50],iconAnchor: [25, 51],popupAnchor: [0, -49],});
@@ -229,6 +236,7 @@
         var municipio = document.getElementById('municipio').value;
         var gasolina = document.querySelector('input[name="Fuel-card"]:checked').value;
 
+
         
 
         $("#boxlist").addClass( "col-md-3" );
@@ -242,7 +250,7 @@
 
                 if(i<10){
                     if(i==0){
-                        map.flyTo([response.data.features[i].properties.Latitud, response.data.features[i].properties.Longitud], 11)
+                        CentrarCluster(response.data.features[i].properties.Latitud,response.data.features[i].properties.Longitud);
                     }
                     var iconolista='icons/'+response.data.features[i].properties.Rotulo+'.png';
                     var iconoerror='icons/OTROS.png';
@@ -267,7 +275,22 @@
     }
 
     function CentrarGasolinera(x,y){
-        map.flyTo([x, y], 15)
+         map.flyTo([x, y], 15)
+    }
+
+    function CentrarCluster(x,y){
+        if((document.getElementById('comarca').value)=="Todas" && (document.getElementById('provincia').value)=="Todas" && (document.getElementById('municipio').value)=="Todas"){
+         map.flyTo([x, y], 6)
+        }
+        else if((document.getElementById('provincia').value)=="Todas" && (document.getElementById('municipio').value)=="Todas"){
+         map.flyTo([x, y], 6)
+        }
+        else if((document.getElementById('municipio').value)=="Todas"){
+            map.flyTo([x, y], 8)
+        }
+        else{
+            map.flyTo([x, y], 11)
+        }
     }
 
     function limpiarlayers(){

@@ -43,10 +43,22 @@ class GasolineraController extends Controller
     {
 
         $condicions = ['IDCCAA' => $request->comarca, 'IDProvincia' => $request->provincia, 'IDMunicipio' => $request->municipio];
+        $condicions2 = ['IDCCAA' => $request->comarca];
+        $condicions3 = ['IDCCAA' => $request->comarca, 'IDProvincia' => $request->provincia];
+        
 
-
-
-        $Gasolinera = Gasolinera::where($condicions)->orderBy($request->gasolina,'asc')->get();
+        if($request->comarca=="Todas" and $request->provincia=="Todas" and $request->municipio=="Todas"){
+            $Gasolinera = Gasolinera::orderBy($request->gasolina,'asc')->get();
+        }
+        elseif($request->provincia=="Todas" and $request->municipio=="Todas"){
+            $Gasolinera = Gasolinera::where($condicions2)->orderBy($request->gasolina,'asc')->get();
+        }
+        elseif($request->municipio=="Todas"){
+            $Gasolinera = Gasolinera::where($condicions3)->orderBy($request->gasolina,'asc')->get();
+        }
+        else{
+            $Gasolinera = Gasolinera::where($condicions)->orderBy($request->gasolina,'asc')->get();
+        }
 
 
         $geoJSONdata = $Gasolinera->map(function ($gasolinera) {
