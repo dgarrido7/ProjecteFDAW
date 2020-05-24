@@ -44,9 +44,8 @@
                                      <table id="tablelist" class=" d-none table table-sm table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th>Icono</th>
                                                 <th>Nombre</th>
-                                                <th>Precio</th>
+                                                <th>Precio (€/L)</th>
                                                 <th class="text-center">Centrar</th>
                                             </tr>
                                         </thead>
@@ -54,6 +53,7 @@
 
                                         </tbody>
                                     </table>
+                                    <p class="text-center"><strong id="LUP"></strong></p>
                                     </div>
                                     <div id="boxmap" class="card col-md-12">
                                         <div class="card-body" id="mapid"></div>
@@ -63,6 +63,9 @@
                         </div>
                     </div>
                     <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12">
+                    <p class="text-center"><strong>Seleccione un tipo de gasolina:</strong></p>
+                    </div>
                         <div class="col-md-12">
                             <div class="cc-selector">
                             <div class="row align-items-center justify-content-center">
@@ -99,9 +102,12 @@
 	</div>
 </div>
 
-<div class="container">
-       
-</div>
+<footer id="footer" class="d-flex-column text-center">
+  <hr class="mt-0">
+  <div class="container text-center">
+      <small>Copyright &copy; Dylan</small>
+    </div>
+</footer>
 @endsection
 @section('styles')
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
@@ -251,13 +257,14 @@
                 if(i<10){
                     if(i==0){
                         CentrarCluster(response.data.features[i].properties.Latitud,response.data.features[i].properties.Longitud);
+                        $('#LUP').text("Datos Actualizados: "+(response.data.features[i].properties.created_at).substring(0,10))
                     }
                     var iconolista='icons/'+response.data.features[i].properties.Rotulo+'.png';
                     var iconoerror='icons/OTROS.png';
                     for(var k=0;response.data.features[i].properties.length;k++){
                         console.log(response.data.features[i].properties[k]);
                     }
-                    $('#tablelist > tbody:last-child').append('<tr> <td>hola</td> <td>'+response.data.features[i].properties.Rotulo+'</td> <td>'+response.data.features[i].properties[gasolina]+'</td> <td class="text-center"> <a href="#" onclick="CentrarGasolinera('+response.data.features[i].properties.Latitud+','+response.data.features[i].properties.Longitud+');return false;">Mostrar</a> </td> </tr>');
+                    $('#tablelist > tbody:last-child').append('<tr><td>'+response.data.features[i].properties.Rotulo+'</td> <td>'+response.data.features[i].properties[gasolina]+'</td> <td class="text-center"> <a href="#" onclick="CentrarGasolinera('+response.data.features[i].properties.Latitud+','+response.data.features[i].properties.Longitud+');return false;">Mostrar</a> </td> </tr>');
                 }
                 var procesado = parseInt(response.data.features[i].properties.IDProvincia)-1;
                 var iconomarca = crearmarker(response.data.features[i].properties.Rotulo);
