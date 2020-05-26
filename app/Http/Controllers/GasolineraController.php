@@ -14,12 +14,6 @@ class GasolineraController extends Controller
      */
     public function index()
     {
-        // $this->authorize('manage_gasolineres');
-
-        // $gasolineresQuery = Gasolineres::query();
-        // $gasolineresQuery->where('name', 'like', '%'.request('q').'%');
-        // $gasolineres = $gasolineresQuery->paginate(25);
-
         return response()->json( Gasolinera::all() );
     }
 }

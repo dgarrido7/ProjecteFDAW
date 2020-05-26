@@ -31,27 +31,7 @@ class Gasolinera extends Model
         'coordinate', 'map_popup_content',
     ];
 
-    // /**
-    //  * Get Gasolinera name_link attribute.
-    //  *
-    //  * @return string
-    //  */
-    // public function getNameLinkAttribute()
-    // {
-    //     $title = __('app.show_detail_title', [
-    //         'name' => $this->name, 'type' => __('Gasolinera.Gasolinera'),
-    //     ]);
-    //     $link = '<a href="'.route('Gasolineras.show', $this).'"';
-    //     $link .= ' title="'.$title.'">';
-    //     $link .= $this->name;
-    //     $link .= '</a>';
-
-    //     return $link;
-    // }
-
-
-
-
+    
 
     /**
      * Gasolinera belongs to User model relation.
