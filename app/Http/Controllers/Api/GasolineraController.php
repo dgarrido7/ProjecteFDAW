@@ -17,6 +17,7 @@ class GasolineraController extends Controller
      */
     public function index(Request $request)
     {
+        //Obtiene todas las gasolienras y las devuelve en formato json
         $Gasolinera = Gasolinera::all();
 
         $geoJSONdata = $Gasolinera->map(function ($gasolinera) {
@@ -41,6 +42,7 @@ class GasolineraController extends Controller
 
     public function filtro(Request $request)
     {
+        //En funcion de las condiciones introducidads, se genera una consulta o otra, luego devuelve las gasolineras filtradas en json
 
         $condicions = ['IDCCAA' => $request->comarca, 'IDProvincia' => $request->provincia, 'IDMunicipio' => $request->municipio];
         $condicions2 = ['IDCCAA' => $request->comarca];
