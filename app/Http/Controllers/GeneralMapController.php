@@ -17,6 +17,7 @@ class GeneralMapController extends Controller
      */
     public function index(Request $request)
     {
+        //Devuelve todas las comunidades, provincias y municipios
         $comunidades = Comunidade::all();
         $provincias = Provincia::all();
         $municipios = Municipio::all();

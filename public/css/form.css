@@ -4,6 +4,8 @@
        -moz-appearance:none;
             appearance:none;
 }
+
+/* Asignamos las imagenes a cada clase */
 .PrecioGasoleoA{background-image:url(../css/imagenes/DieselA.png);}
 .PrecioGasoleoB{background-image:url(../css/imagenes/DieselB.png);}
 .PrecioGasolina98{background-image:url(../css/imagenes/Gasolina98.png);}
@@ -11,12 +13,15 @@
 .PrecioBiodiesel{background-image:url(../css/imagenes/BioDiesel.png);}
 .PrecioBioetanol{background-image:url(../css/imagenes/BioEtanol.png);}
 
+/* Si no utilizamos el input hacer que se vea a una opacidad distinta */
 .cc-selector input:active +.drinkcard-cc{opacity: .9;}
 .cc-selector input:checked +.drinkcard-cc{
     -webkit-filter: none;
        -moz-filter: none;
             filter: none;
 }
+
+/* Clase general de los botones cuando estan seleccionados */
 .drinkcard-cc{
     cursor:pointer;
     background-size:contain;
@@ -30,6 +35,8 @@
        -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
             filter: brightness(1.8) grayscale(1) opacity(.7);
 }
+
+/* Clase de los botones al hacer hover, subimos opacidad y brillo */
 .drinkcard-cc:hover{
     -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
        -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);

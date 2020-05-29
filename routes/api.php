@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-
+//RUTAS API PARA OBTENER TODAS LAS GASOLINERAS Y PARA OBTENER SOLO LAS FILTRADAS
 Route::group(['as' => 'api.', 'namespace' => 'Api'], function () {
     Route::get('gasolineras', 'GasolineraController@index')->name('gasolineras.index');
     Route::get('filtro', 'GasolineraController@filtro');

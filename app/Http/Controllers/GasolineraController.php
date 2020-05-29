@@ -14,6 +14,7 @@ class GasolineraController extends Controller
      */
     public function index()
     {
+        //Devuelve todas las gasolineras
         return response()->json( Gasolinera::all() );
     }
 }
