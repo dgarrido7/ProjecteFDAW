@@ -149,10 +149,11 @@
                 $("#provincia").append(o);
             }
         }
-        $("#provincia").prop("disabled", false );
+        
         if(!isDisabled){
             $('#provincia').trigger('change');
         }
+        $("#provincia").prop("disabled", false );
     });
 
 
